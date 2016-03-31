@@ -1,0 +1,36 @@
+Potential Improvements:
+
+
+
+1) Implement Barnes-Hut algorithm for speed improvements:
+	* Currently, I use brute-force to compute each step of the simulation
+	* Barnes-Hut requires O(N log(N)) operations per step, as opposed to O(N^2))
+
+
+2) Write Multithreaded version to take advantage of multiple cores
+
+
+3) Use CUDA Python to take advantage of the GPU
+
+
+3) Write new version in C++ for significant performance improvements
+	* Beyond C++ being closer to the hardware to begin with:
+		Barnes-Hut makes use of a QuadTree. That data structure is better implemented
+		in C++, as in Python, the only straightforward way to do it is to nest objects.
+		This is much slower than accessing pointers, as we would in the C++ version.
+
+
+4) Write Javascript version to run in a browser, host on Heroku/AWS
+
+
+5) Extend the simulation to 3 dimensions
+	* Add in re-framing the axes each 10 steps for when the particles expand
+	* Add in ability to grab+rotate the 3D space along each axis
+
+
+6) Add physics engine support for particle collisions
+	* In practice this is extremely unlikely so it is usually ignored
+	* Checking for collisions would also cause a decrease in performance
+
+
+7) Add functionality to record + save an MP4 video clip
